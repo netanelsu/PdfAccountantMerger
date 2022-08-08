@@ -1,0 +1,75 @@
+<html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = '/CSS/new.css' )}}">
+
+</head>
+
+<body>
+
+    <h2>PDFMerger</h2>
+    <div class="container" id="container">
+        <div class="form-container sign-up-container">
+            <form action="" method="post">
+                {{ form2.hidden_tag() }}
+                <h1>Create Account</h1>
+                <span>or use your account</span>
+
+                {{ form2.username1(placeholder="Username")}}
+                {{ form2.email(placeholder="Email") }}
+                {{ form2.password1(placeholder="Password")}}
+                {{ form2.first_name(placeholder="FirstName")}}
+                {{ form2.last_name(placeholder="LastName")}}
+                <select id="role" name="role" placeholder="Role">
+                    <option value="ACCOUNTANT">ACCOUNTANT</option>
+                    <option value="CUSTOMER">CUSTOMER</option>
+                </select>
+                <select id="avatar" name="avatar" placeholder="Avatar">
+                    <option value="https://robohash.org/3EC.png?set=set4">cat1</option>
+                    <option value="https://robohash.org/293.png?set=set4">cat2</option>
+                    <option value="https://robohash.org/ZOB.png?set=set4">cat3</option>
+                </select>
+                <input class="but" id="submit2" name="submit2" type="submit" value="Sign Up">
+                <!--<button>Sign Up</button>-->
+            </form>
+        </div>
+        <div class="form-container sign-in-container">
+            <form action="" method="post" novalidate>
+                {{ form1.hidden_tag() }}
+                <h1>Sign in</h1>
+                <span>or use your username for registration</span>
+                {{ form1.username(placeholder="Username")}}
+                {{ form1.password(placeholder="Password")}}
+                <input class="but" id="submit1" name="submit1" type="submit" value="Sign In">
+
+                <!--<button>Sign In</button>-->
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Welcome Back!</h1>
+                    <p>To keep connected with us please login with your personal info</p>
+                    <input class="but ghost" id="signIn" name="signIn" type="submit" value="Sign In">
+                    <!--<button class="ghost" id="signIn">Sign In</button>-->
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Hello, Friend!</h1>
+                    <p>Enter your personal details and start journey with us</p>
+                    <input class="but ghost" id="signUp" name="signUp" type="submit" value="Sign Up">
+                    <!--<button class="ghost" id="signUp">Sign Up</button>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{{url_for('static', filename='new.js') }}"></script>
+</body>
+
+</html>

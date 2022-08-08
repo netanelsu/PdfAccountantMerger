@@ -1,0 +1,69 @@
+{% extends "home.html" %}
+{% block content %}
+<h1 class="display-2" style="text-align: center; color:#212529; padding-top: 150px;">Register</h1>
+<div class="container">
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.username.label }}<br>
+            {{ form.username(size=32) }}<br>
+            {% for error in form.username.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.email.label }}<br>
+            {{ form.email(size=64) }}<br>
+            {% for error in form.email.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.password.label }}<br>
+            {{ form.password(size=32) }}<br>
+            {% for error in form.password.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.password2.label }}<br>
+            {{ form.password2(size=32) }}<br>
+            {% for error in form.password2.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.first_name.label }}<br>
+            {{ form.first_name(size=32) }}<br>
+            {% for error in form.password2.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.last_name.label }}<br>
+            {{ form.last_name(size=32) }}<br>
+            {% for error in form.password2.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <div class="input-group">
+            <span class="input-group-addon">role</span>
+            <select name="role" class="selectpicker form-control">
+                {% for o in form.role %}
+                <option value="{{ o.name }}">{{ o }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon">avatar</span>
+            <select name="avatar" class="selectpicker form-control">
+                {% for o in form.avatar %}
+                <option value="{{ o.name }}">{{ o }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <p>{{ form.submit() }}</p>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "home.html" %}
+
+{% block content %}
+<h1
+    style="text-align: center; color:#212529; padding-top: 300px; font-family: 'Poppins', sans-serif; margin-bottom: 20px;">
+    Download Merged
+    PDF & Send Email</h1>
+<h6 style="text-align: center; color:#212529; font-family: 'Poppins', sans-serif; margin-bottom: 15px;">
+    Download Merged
+    PDF to your local PC & Send it automatically to your accountant Email</h6>
+<div class="container">
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        {% if form.errors %}
+        {{ form.errors }}
+        {% endif %}
+        <div class="inputelem">
+            <input class="but" id="download" name="download" type="submit" value="Merged & Send">
+        </div>
+    </form>
+</div>
+{% endblock %}
